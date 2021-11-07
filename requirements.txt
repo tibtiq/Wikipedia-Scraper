@@ -1,4 +1,4 @@
-nltk==3.5
+nltk==3.6.5
 matplotlib==3.3.3
 requests==2.25.1
 beautifulsoup4==4.10.0
