@@ -9,4 +9,5 @@ dependencies = [
     "matplotlib>=3.10.8",
     "nltk>=3.9.2",
     "requests>=2.32.5",
+    "wordcloud>=1.9.4",
 ]
