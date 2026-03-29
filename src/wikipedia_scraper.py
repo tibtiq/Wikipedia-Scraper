@@ -1,3 +1,4 @@
+import json
 import re
 from collections import defaultdict
 from operator import itemgetter
@@ -191,7 +192,7 @@ def display_piecharts(
         ax.pie(
             word_frequencies.values(), labels=word_frequencies.keys(), autopct="%1.1f%%"
         )
-        ax.set_title(f'Section: {section["title"]}')
+        ax.set_title(f"Section: {section['title']}")
         plt.show()
 
 
@@ -250,7 +251,7 @@ def display_barcharts(
         fig = plt.figure(figsize=(15, 4.8))
         ax = fig.add_axes([0, 0, 1, 1])
         ax.bar(word_frequencies.keys(), word_frequencies.values())
-        ax.set_title(f'Section: {section["title"]}')
+        ax.set_title(f"Section: {section['title']}")
         plt.show()
 
 
@@ -318,7 +319,7 @@ def display_wordclouds(
 
         # plot the WordCloud image
         plt.figure(figsize=(8, 8), facecolor=None)
-        plt.title(f'Section: {section["title"]}')
+        plt.title(f"Section: {section['title']}")
         plt.imshow(wordcloud)
 
         plt.axis("off")
