@@ -1220,7 +1220,7 @@ wheels = [
 ]
 
 [[package]]
-name = "wikipedia-scraper"
+name = "wikipediascraper"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
