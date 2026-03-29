@@ -10,9 +10,7 @@ from wordcloud import WordCloud
 
 
 def load_page(url: str) -> list[dict]:
-    """
-    Load html content from requested Wikipedia page using
-    Wikipedia's API and separate them into sections.
+    """Load html content from requested Wikipedia page using Wikipedia's API and separate them into sections.
 
     Args:
         url (str): URL of requested Wikipedia page to parse
@@ -83,9 +81,8 @@ def load_page(url: str) -> list[dict]:
 
 
 def digest_page(parsed_sections: list[dict]) -> list[dict]:
-    """
-    Digest parsed section by removing stop words and punctuation; then computing
-    the frequency of words for each section.
+    """Digest parsed section by removing stop words and punctuation; then computing the frequency
+    of words for each section.
 
     Args:
         parsed_section (list[dict]): List of dictionaries. Each dictionary

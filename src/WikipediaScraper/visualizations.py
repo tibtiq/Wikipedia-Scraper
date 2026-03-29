@@ -9,9 +9,7 @@ def display_piecharts(
     remove_below_cutoff: bool = False,
     num_sections_to_show: int = 5,
 ) -> None:
-    """
-    Displays parsed information from Wikipedia page in a pie chart using given
-    specifications.
+    """Displays parsed information from Wikipedia page in a pie chart using given specifications.
 
     Args:
         parsed_sections (list[dict]): List of dictionaries. Each dictionary
@@ -75,9 +73,7 @@ def display_barcharts(
     remove_below_cutoff: bool = False,
     num_sections_to_show: int = 5,
 ) -> None:
-    """
-    Displays parsed information from Wikipedia page in a bar chart using given
-    specifications.
+    """Displays parsed information from Wikipedia page in a bar chart using given specifications.
 
     Args:
         parsed_sections (List[Dict]): List of dictionaries. Each dictionary
@@ -134,9 +130,7 @@ def display_wordclouds(
     remove_below_cutoff: bool = False,
     num_sections_to_show: int = 5,
 ) -> None:
-    """
-    Displays parsed information from Wikipedia page in a word cloud using given
-    specifications.
+    """Displays parsed information from Wikipedia page in a word cloud using given specifications.
 
     Args:
         parsed_sections (list[dict]): List of dictionaries. Each dictionary
@@ -201,8 +195,7 @@ def display_wordclouds(
 
 
 def display_rawdata(parsed_sections: list[dict], num_sections_to_show: int = 5) -> None:
-    """
-    Displays parsed information from Wikipedia page.
+    """Displays parsed information from Wikipedia page.
 
     Args:
         parsed_sections (list[dict]): List of dictionaries. Each dictionary
