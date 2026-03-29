@@ -1,7 +1,6 @@
 import re
 from collections import defaultdict
 from operator import itemgetter
-from typing import Dict, List
 
 import matplotlib.pyplot as plt
 import requests
@@ -10,7 +9,7 @@ from nltk.corpus import stopwords
 from wordcloud import WordCloud
 
 
-def load_page(url: str) -> List[dict]:
+def load_page(url: str) -> list[dict]:
     """
     Load html content from requested Wikipedia page using
     Wikipedia's API and separate them into sections.
@@ -19,7 +18,7 @@ def load_page(url: str) -> List[dict]:
         url (str): URL of requested Wikipedia page to parse
 
     Returns:
-        List[dict]: List of dictionaries. Each dictionary contains
+        list[dict]: List of dictionaries. Each dictionary contains
           the parsed plain-text and hyperlinks for the section.
     """
     headers = {
@@ -83,17 +82,17 @@ def load_page(url: str) -> List[dict]:
     return parsed_sections
 
 
-def digest_page(parsed_sections: List[Dict]) -> List[Dict]:
+def digest_page(parsed_sections: list[dict]) -> list[dict]:
     """
     Digest parsed section by removing stop words and punctuation; then computing
     the frequency of words for each section.
 
     Args:
-        parsed_section (List[Dict]): List of dictionaries. Each dictionary
+        parsed_section (list[dict]): List of dictionaries. Each dictionary
           contains the parsed plain-text and hyperlinks for the section.
 
     Returns:
-      List[Dict]: List of dictionaries. Each dictionary
+      list[dict]: List of dictionaries. Each dictionary
         contains the parsed plain-text, hyperlinks for the section, word
           frequencies excluding 'stop words'.
     """

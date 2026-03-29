@@ -1,11 +1,9 @@
-from typing import Dict, List
-
 import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 
 
 def display_piecharts(
-    parsed_sections: List[Dict],
+    parsed_sections: list[dict],
     frequency_cutoff: int = 0,
     group_below_cutoff: bool = False,
     remove_below_cutoff: bool = False,
@@ -16,7 +14,7 @@ def display_piecharts(
     specifications.
 
     Args:
-        parsed_sections (List[Dict]): List of dictionaries. Each dictionary
+        parsed_sections (list[dict]): List of dictionaries. Each dictionary
           contains the parsed plain-text and hyperlinks for the section.
         frequency_cutoff (int): Value used to determine how to remove or group
           words words based on their frequency. Defaults to 0.
@@ -71,7 +69,7 @@ def display_piecharts(
 
 
 def display_barcharts(
-    parsed_sections: List[Dict],
+    parsed_sections: list[dict],
     frequency_cutoff: int = 0,
     group_below_cutoff: bool = False,
     remove_below_cutoff: bool = False,
@@ -130,7 +128,7 @@ def display_barcharts(
 
 
 def display_wordclouds(
-    parsed_sections: List[Dict],
+    parsed_sections: list[dict],
     frequency_cutoff: int = 0,
     group_below_cutoff: bool = False,
     remove_below_cutoff: bool = False,
@@ -141,7 +139,7 @@ def display_wordclouds(
     specifications.
 
     Args:
-        parsed_sections (List[Dict]): List of dictionaries. Each dictionary
+        parsed_sections (list[dict]): List of dictionaries. Each dictionary
           contains the parsed plain-text and hyperlinks for the section.
         frequency_cutoff (int): Value used to determine how to remove or group
           words words based on their frequency. Defaults to 0.
@@ -202,12 +200,12 @@ def display_wordclouds(
         plt.show()
 
 
-def display_rawdata(parsed_sections: List[Dict], num_sections_to_show: int = 5) -> None:
+def display_rawdata(parsed_sections: list[dict], num_sections_to_show: int = 5) -> None:
     """
     Displays parsed information from Wikipedia page.
 
     Args:
-        parsed_sections (List[Dict]): List of dictionaries. Each dictionary
+        parsed_sections (list[dict]): List of dictionaries. Each dictionary
           contains the parsed plain-text and hyperlinks for the section.
         num_sections_to_show (int): Specifies the number of sections to display
           graphs for. Defaults to 5.
