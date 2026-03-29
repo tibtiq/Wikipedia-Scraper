@@ -36,6 +36,9 @@ def load_page(url: str) -> List[dict]:
     # get title and index of every section of requested Wikipedia page
     response = requests.get(
         f"https://en.wikipedia.org/w/api.php?action=parse&prop=tocdata&format=json&page={page_name}",
+        headers={
+            "User-Agent": "Wikipedia-Scrapper (https://github.com/tibtiq/Wikipedia-Scraper; 29826331+tibtiq@users.noreply.github.com)"
+        },
     )
     response = response.json()["parse"]["tocdata"]["sections"]
     for section_metadata in response:
@@ -47,7 +50,10 @@ def load_page(url: str) -> List[dict]:
     for section in parsed_sections:
         # get html extract of page content from Wikipedia's API
         response = requests.get(
-            f"https://en.wikipedia.org/w/api.php?action=parse&section={section['index']}&prop=text&format=json&page={page_name}"
+            f"https://en.wikipedia.org/w/api.php?action=parse&section={section['index']}&prop=text&format=json&page={page_name}",
+            headers={
+                "User-Agent": "Wikipedia-Scrapper (https://github.com/tibtiq/Wikipedia-Scraper; 29826331+tibtiq@users.noreply.github.com)"
+            },
         )
         response = response.json()["parse"]["text"]["*"]
 
