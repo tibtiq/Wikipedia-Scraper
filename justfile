@@ -5,6 +5,11 @@ sync:
     uv sync
     uv pip install --editable .
 
+# update project dependencies
+update:
+    uv sync --upgrade
+    uv pip install --editable .
+
 # run formatter
 format:
     uvx ruff format .
