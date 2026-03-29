@@ -1280,10 +1280,10 @@ requires-dist = [
     { name = "ipykernel", specifier = ">=7.2.0" },
     { name = "lxml", specifier = ">=6.0.2" },
     { name = "matplotlib", specifier = ">=3.10.8" },
-    { name = "nltk", specifier = ">=3.9.2" },
+    { name = "nltk", specifier = ">=3.9.4" },
     { name = "pip", specifier = ">=26.0.1" },
-    { name = "requests", specifier = ">=2.32.5" },
-    { name = "wordcloud", specifier = ">=1.9.4" },
+    { name = "requests", specifier = ">=2.33.0" },
+    { name = "wordcloud", specifier = ">=1.9.6" },
 ]
 
 [[package]]
