@@ -1,13 +1,15 @@
-import requests
+import json
 import re
-from bs4 import BeautifulSoup
-from typing import List, Dict
 from collections import defaultdict
 from operator import itemgetter
+from typing import Dict, List
+
 import matplotlib.pyplot as plt
 
 # use nltk for list of stop words
 import nltk
+import requests
+from bs4 import BeautifulSoup
 
 nltk.download("stopwords")
 from nltk.corpus import stopwords
@@ -26,6 +28,9 @@ def load_page(url: str) -> List[dict]:
         List[dict]: List of dictionaries. Each dictionary contains
           the parsed plain-text and hyperlinks for the section.
     """
+    headers = {
+        "User-Agent": "Wikipedia-Scrapper (https://github.com/tibtiq/Wikipedia-Scraper; 29826331+tibtiq@users.noreply.github.com)"
+    }
 
     parsed_sections = []
 
@@ -34,9 +39,10 @@ def load_page(url: str) -> List[dict]:
 
     # get title and index of every section of requested Wikipedia page
     response = requests.get(
-        f"https://en.wikipedia.org/w/api.php?action=parse&prop=sections&format=json&page={page_name}"
+        f"https://en.wikipedia.org/w/api.php?action=parse&prop=tocdata&format=json&page={page_name}",
+        headers=headers,
     )
-    response = response.json()["parse"]["sections"]
+    response = response.json()["parse"]["tocdata"]["sections"]
     for section_metadata in response:
         section = dict()
         section["title"] = section_metadata["line"]
@@ -46,7 +52,8 @@ def load_page(url: str) -> List[dict]:
     for section in parsed_sections:
         # get html extract of page content from Wikipedia's API
         response = requests.get(
-            f"https://en.wikipedia.org/w/api.php?action=parse&section={section['index']}&prop=text&format=json&page={page_name}"
+            f"https://en.wikipedia.org/w/api.php?action=parse&section={section['index']}&prop=text&format=json&page={page_name}",
+            headers=headers,
         )
         response = response.json()["parse"]["text"]["*"]
 
@@ -185,7 +192,7 @@ def display_piecharts(
         ax.pie(
             word_frequencies.values(), labels=word_frequencies.keys(), autopct="%1.1f%%"
         )
-        ax.set_title(f'Section: {section["title"]}')
+        ax.set_title(f"Section: {section['title']}")
         plt.show()
 
 
@@ -244,7 +251,7 @@ def display_barcharts(
         fig = plt.figure(figsize=(15, 4.8))
         ax = fig.add_axes([0, 0, 1, 1])
         ax.bar(word_frequencies.keys(), word_frequencies.values())
-        ax.set_title(f'Section: {section["title"]}')
+        ax.set_title(f"Section: {section['title']}")
         plt.show()
 
 
@@ -312,7 +319,7 @@ def display_wordclouds(
 
         # plot the WordCloud image
         plt.figure(figsize=(8, 8), facecolor=None)
-        plt.title(f'Section: {section["title"]}')
+        plt.title(f"Section: {section['title']}")
         plt.imshow(wordcloud)
 
         plt.axis("off")
