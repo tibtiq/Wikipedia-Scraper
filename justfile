@@ -3,7 +3,7 @@ default: sync format lint type
 # sync environment with project dependencies
 sync:
     uv sync
-    uv pip install .
+    uv pip install --editable .
 
 # run formatter
 format:
