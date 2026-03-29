@@ -15,3 +15,7 @@ lint:
 # run type checker
 type:
     uv run pyright .
+
+# run scraper
+run: sync
+    uv run src/wikipedia_scraper.py
