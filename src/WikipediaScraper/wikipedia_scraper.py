@@ -2,11 +2,9 @@ import re
 from collections import defaultdict
 from operator import itemgetter
 
-import matplotlib.pyplot as plt
 import requests
 from bs4 import BeautifulSoup
 from nltk.corpus import stopwords
-from wordcloud import WordCloud
 
 
 def load_page(url: str) -> list[dict]:
