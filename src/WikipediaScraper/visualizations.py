@@ -24,9 +24,6 @@ def display_piecharts(
           Defaults to False.
         num_sections_to_show (int): Specifies the number of sections to display
           graphs for. Defaults to 5.
-
-    Returns:
-      None
     """
 
     for section in parsed_sections[:num_sections_to_show]:
@@ -88,9 +85,6 @@ def display_barcharts(
           Defaults to False.
         num_sections_to_show (int): Specifies the number of sections to display
           graphs for. Defaults to 5.
-
-    Returns:
-      None
     """
 
     for section in parsed_sections[:num_sections_to_show]:
@@ -145,9 +139,6 @@ def display_wordclouds(
           Defaults to False.
         num_sections_to_show (int): Specifies the number of sections to display
           graphs for. Defaults to 5.
-
-    Returns:
-      None
     """
 
     for section in parsed_sections[:num_sections_to_show]:
@@ -202,9 +193,6 @@ def display_rawdata(parsed_sections: list[dict], num_sections_to_show: int = 5) 
           contains the parsed plain-text and hyperlinks for the section.
         num_sections_to_show (int): Specifies the number of sections to display
           graphs for. Defaults to 5.
-
-    Returns:
-      None
     """
 
     for section in parsed_sections[:num_sections_to_show]:
