@@ -4,13 +4,8 @@ from operator import itemgetter
 from typing import Dict, List
 
 import matplotlib.pyplot as plt
-
-# use nltk for list of stop words
-import nltk
 import requests
 from bs4 import BeautifulSoup
-
-nltk.download("stopwords")
 from nltk.corpus import stopwords
 from wordcloud import WordCloud
 
