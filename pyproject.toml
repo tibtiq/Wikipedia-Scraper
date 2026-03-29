@@ -14,3 +14,10 @@ dependencies = [
     "requests>=2.33.0",
     "wordcloud>=1.9.6",
 ]
+
+[tool.pyright]
+exclude = [
+    ".venv",
+    "tests",
+    "build"
+]
