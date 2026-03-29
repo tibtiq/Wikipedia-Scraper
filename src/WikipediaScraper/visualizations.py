@@ -55,9 +55,11 @@ def display_piecharts(
 
         # graph pie chart
         fig = plt.figure()
-        ax = fig.add_axes([0, 0, 2, 2])
+        ax = fig.add_axes((0, 0, 2, 2))
         ax.pie(
-            word_frequencies.values(), labels=word_frequencies.keys(), autopct="%1.1f%%"
+            list(word_frequencies.values()),
+            labels=list(word_frequencies.keys()),
+            autopct="%1.1f%%",
         )
         ax.set_title(f"Section: {section['title']}")
         plt.show()
@@ -111,8 +113,8 @@ def display_barcharts(
 
         # graph bar chart
         fig = plt.figure(figsize=(15, 4.8))
-        ax = fig.add_axes([0, 0, 1, 1])
-        ax.bar(word_frequencies.keys(), word_frequencies.values())
+        ax = fig.add_axes((0, 0, 1, 1))
+        ax.bar(list(word_frequencies.keys()), list(word_frequencies.values()))
         ax.set_title(f"Section: {section['title']}")
         plt.show()
 
