@@ -130,5 +130,3 @@ if __name__ == "__main__":
     # scrap and parse link
     parsed_sections = load_page(url)
     parsed_sections = digest_page(parsed_sections)
-
-    display_rawdata(parsed_sections, num_sections_to_show=5)
