@@ -35,9 +35,9 @@ def load_page(url: str) -> List[dict]:
 
     # get title and index of every section of requested Wikipedia page
     response = requests.get(
-        f"https://en.wikipedia.org/w/api.php?action=parse&prop=sections&format=json&page={page_name}"
+        f"https://en.wikipedia.org/w/api.php?action=parse&prop=tocdata&format=json&page={page_name}",
     )
-    response = response.json()["parse"]["sections"]
+    response = response.json()["parse"]["tocdata"]["sections"]
     for section_metadata in response:
         section = dict()
         section["title"] = section_metadata["line"]
